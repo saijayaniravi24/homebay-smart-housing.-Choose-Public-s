@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HomeBay helps newcomers compare rental homes in unfamiliar cities.">
+  <title>HomeBay | Smart Rental Housing Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="HomeBay home"><span class="brand-mark">H</span><span>HomeBay</span></a>
+    <span class="tagline">Find a place to feel at home.</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SMART RENTAL HOUSING FINDER</p>
+        <h1>Your next home,<br><span>made simpler.</span></h1>
+        <p class="hero-copy">Compare rental options, understand the costs, and contact property owners — all in one place.</p>
+      </div>
+      <div class="hero-card"><span class="hero-icon">⌂</span><strong>Search smarter</strong><small>Rent · Deposit · Location · Move-in</small></div>
+    </section>
+
+    <section class="search-panel" aria-label="Search rental properties">
+      <div class="section-heading">
+        <div><p class="eyebrow">START YOUR SEARCH</p><h2>Find your space</h2></div>
+        <button id="resetBtn" class="text-button" type="button">Reset filters</button>
+      </div>
+      <div class="filters">
+        <label>City or locality<input id="locationFilter" type="search" placeholder="e.g. Chennai, Adyar"></label>
+        <label>Maximum monthly rent (₹)<input id="rentFilter" type="number" min="0" placeholder="e.g. 15000"></label>
+        <label>Room type<select id="roomFilter"><option value="">Any room type</option><option>1 BHK</option><option>2 BHK</option><option>Shared room</option><option>Studio</option></select></label>
+        <label>Furnishing<select id="furnishFilter"><option value="">Any furnishing</option><option>Furnished</option><option>Semi-furnished</option><option>Unfurnished</option></select></label>
+      </div>
+      <div class="result-row"><p id="resultCount" aria-live="polite">Showing homes</p><span class="demo-label">DEMO LISTINGS</span></div>
+      <div id="listingGrid" class="listing-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>No homes match those filters. Try changing your search.</div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span>01</span><strong>Compare clearly</strong><p>Review rent, deposit and amenities side by side.</p></div>
+      <div><span>02</span><strong>Save favourites</strong><p>Keep interesting options together while you decide.</p></div>
+      <div><span>03</span><strong>Stay cautious</strong><p>Confirm details and inspect a property before paying.</p></div>
+    </section>
+    <p class="disclaimer">Prototype notice: listings and contact details are fictional sample data for demonstration only. HomeBay does not verify these properties. Never send money before independently confirming a listing and its terms.</p>
+  </main>
+  <footer><span>© 2026 HomeBay · NexNest</span><span>Smart rental discovery for newcomers</span></footer>
+  <dialog id="contactDialog">
+    <form method="dialog" class="dialog-content">
+      <button class="close-dialog" aria-label="Close" value="cancel">×</button>
+      <p class="eyebrow">PROPERTY ENQUIRY</p><h2 id="dialogTitle">Contact owner</h2>
+      <p id="dialogText">This is a demo interaction. No message will be sent.</p>
+      <label>Your name<input id="enquiryName" placeholder="Enter your name"></label>
+      <label>Message<textarea id="enquiryMessage" rows="3">Hello, I am interested in this property. Is it available for a visit?</textarea></label>
+      <button class="primary-btn" id="prepareEnquiry" type="button">Prepare enquiry</button>
+      <p id="enquiryFeedback" class="feedback" aria-live="polite"></p>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
